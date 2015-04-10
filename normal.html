@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Exercises</title>
+
+<link rel="stylesheet" type="text/css" href="css/body.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.imagemapster.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="headerBar">
+            <a href="index.html">
+                <strong>&laquo; Back to Homepage</strong>
+            </a>
+    </header>
+    
+    <div class = "wrap">
+        
+    <div class = "left">
+	   <img id="body" src="img/body.png" usemap="#body" >
+    </div>
+    
+    <div class = "right">
+        <div id="selections" style="clear:both;"></div>
+    </div>
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+	   var image = $('img');
+	   var xref = {
+	   		legs: "This is the leg",
+	   		abs: "This is the abs",
+	   		arms: "this is the right arm"
+	   };
+	   var defaultDipTooltip = 'Hover over each body part';
+
+	   image.mapster(
+       {
+       		fillOpacity: 1,
+       		fillColor: "f4ff94",
+       		strokeColor: "3320FF",
+       		strokeOpacity: 1,
+       		strokeWidth: 4,
+       		stroke: true,
+            isSelectable: true,
+			singleSelect: true,
+            mapKey: 'name',
+            listKey: 'name',
+            onClick: function (e) {
+                var newToolTip = defaultDipTooltip;
+                $('#selections').html(xref[e.key]);
+                image.mapster('set_options',{areas: [{
+                	key: "dip",
+                	}]
+                });
+            },
+            showToolTip: true,
+            toolTipClose: ["tooltip-click", "area-click"]
+        });
+      });
+      </script>
+	<map id="body" name="body">
+        
+	<area shape="poly" name="arms" coords="171,187,196,166,200,180,201,194,206,206,208,218,209,236,209,250,213,267,220,283,215,287,214,302,204,304,193,300,190,280,190,266,186,242,178,222,178,206" href="#">
+	<area shape="poly" name="arms" coords="54,170,80,189,77,200,76,217,74,234,65,249,63,266,64,285,59,305,48,305,41,301,39,289,35,284,45,264,43,232,46,210,50,196" href="#">
+	<area shape="poly" name="legs" coords="83,261,169,260,171,290,167,321,161,340,162,361,164,384,158,415,150,446,130,441,131,430,130,410,131,386,133,368,133,359,131,346,126,327,125,327,124,351,121,368,124,380,125,407,123,433,123,441,105,444,98,417,92,394,90,373,91,368,93,360,93,344,88,325,83,300"href="#">
+	<area shape="poly" name="abs" coords="88,199,164,199,164,213,163,227,166,244,86,245,89,229,88,215" href="#">
+    </map>
+
+</div>
+<body>
