@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)http://www.picssel.com/playground/jquery/youTubeFromImageMap_17feb12.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="author" content="Jose Francisco Diaz / picssel.com">
+<title>Exercises</title>
+<link rel="stylesheet" type="text/css" href="../css/jquery.fancybox-1.3.4.css">
+<link rel="stylesheet" type="text/css" href="../css/body.css">
+<script src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery.fancybox-1.3.4.pack.js"></script>
+<script>
+/* <![CDATA[ */
+$(document).ready(function() {
+ $('map > area.fancybox').click(function(e) {
+  $.fancybox({
+   'padding'		: 0,
+   'autoScale' : false,
+   'transitionIn' : 'none',
+   'transitionOut' : 'none',
+   'title' : this.title,
+   'width' : 640,
+   'height' : 390,
+   'href' : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+   'type' : 'swf',
+   'swf' : {
+     'wmode' : 'transparent',
+     'allowfullscreen' : 'true'
+   }
+  }); // fancybox
+  return false;
+ }); // click
+}); //  ready
+/* ]]> */
+</script>
+
+</head>
+<body>
+    <header>
+        <div class="headerBar">
+            <a href="../index.html">
+                <strong>&laquo; Back to Homepage</strong>
+            </a>
+    </header>
+        
+<div id="wrap">
+<img src="../img/body.png" usemap="#Map" alt="K1000RS1"><br>
+<p>Click on the different body parts to start your workout!</p>
+
+<map name="Map" id="Map">
+
+    <area class="fancybox" shape="poly" name="arms" coords="171,187,196,166,200,180,201,194,206,206,208,218,209,236,209,250,213,267,220,283,215,287,214,302,204,304,193,300,190,280,190,266,186,242,178,222,178,206" href="https://www.youtube.com/watch?v=nqRtuPGMb7s&list=PLfaIZddJ4cMjQJ8sG0FwSn_wEu5Wx90yT&index=0&autoplay=1" title="Simple arm exercises to help you get lean and tone. Click the left arm for more exercises." alt="rightarm">
+    <area class="fancybox" shape="poly" name="arms" coords="54,170,80,189,77,200,76,217,74,234,65,249,63,266,64,285,59,305,48,305,41,301,39,289,35,284,45,264,43,232,46,210,50,196"href="https://www.youtube.com/watch?v=6kALZikXxLc&list=PLWVrKJCZgTW7g7B1nP6sb7rAiEKRluxfP&index=0&autoplay=1" title="Simple arm exercises to help you get lean and tone. Click the right arm for more exercises." alt="leftarm">
+    <area class="fancybox" shape="poly" name="legs" coords="83,261,169,260,171,290,167,321,161,340,162,361,164,384,158,415,150,446,130,441,131,430,130,410,131,386,133,368,133,359,131,346,126,327,125,327,124,351,121,368,124,380,125,407,123,433,123,441,105,444,98,417,92,394,90,373,91,368,93,360,93,344,88,325,83,300" href="https://www.youtube.com/watch?v=9a8r12qqFHs&list=PLWVrKJCZgTW7q10Dxi8BBA7q89yRcnuN7&index=0&autoplay=1" title="Various workouts for the legs and glutes." alt="legs">
+    <area class="fancybox" shape="poly" name="abs" coords="88,199,164,199,164,213,163,227,166,244,86,245,89,229,88,215" href="https://www.youtube.com/watch?v=E056aYzzFjo&list=PLWVrKJCZgTW6BxlbR9efe08sw_A0kpC8O&index=0&autoplay=1" title="Various workouts for toning the stomach and bringing out those abs." alt="abs">
+</map>
+
+
+<br><br>
+</div><!--wrap-->
+</body> 
+</html>
